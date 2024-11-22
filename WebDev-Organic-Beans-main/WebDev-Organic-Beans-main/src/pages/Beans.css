@@ -1,0 +1,190 @@
+/* Reset default margin/padding for body */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent vertical scrollbars if not needed */
+}
+
+/* Scroll container for the carousel */
+.scroll-container {
+  display: flex;
+  width: 100vw; /* Fit full screen width */
+  height: 100vh; /* Fit full screen height */
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable snapping */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  overscroll-behavior-x: contain; /* Contain scrolling within bounds */
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual sections */
+.scroll-item {
+  scroll-snap-align: start; /* Snap at the start of each item */
+  flex: 0 0 100%; /* Each section fills the full viewport width */
+  height: 100%; /* Each section fills the full viewport height */
+  display: flex;
+  flex-direction: column; /* Allow stacking elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  color: rgb(37, 12, 1);
+}
+
+/* Section colors for visual distinction */
+.section-1 {
+  background-color: #bccf93;
+}
+.section-2 {
+  background-color: #a1a34076;
+}
+.section-3 {
+  background-color: #d2ac5e;
+}
+.section-4 {
+  background-color: #b0734b;
+}
+
+/* Coffee image container */
+.coffee-image {
+  flex: 1; /* Take up half of the screen vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.coffee-image img {
+  max-width: 80%; /* Restrict the image size */
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+
+}
+
+/* Coffee description container */
+/* Coffee description container */
+.coffee-description {
+  flex: 1; /* Take up the other half of the screen */
+  font-size: 20px;
+  text-align: left;
+  font-family: 'Arial', serif; /* Ensure proper font for description */
+  padding: 0 20px;
+  margin-top: 0px; /* Add space above the description */
+}
+
+/* Button container */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px; /* Add spacing between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center; /* Center buttons on smaller screens */
+}
+
+/* Buttons styling */
+.btn {
+  padding: 10px 20px;
+  background-color: #793d12b8; /* Coffee-like button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Giaza Stencil', serif;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #A0522D; /* Slightly lighter color */
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Search container */
+.search-container {
+  position: relative;
+  margin: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  padding: 10px;
+  font-size: 14px;
+  color: #4a4a4a;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f9f9f9;
+  color: #2e2e2e;
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+  .scroll-container {
+    height: 80vh; /* Adjust height for smaller screens */
+  }
+
+  .coffee-description {
+    font-size: 16px; /* Reduce text size */
+    padding: 0 50px; /* Reduce padding */
+  }
+
+  .coffee-image img {
+    max-width: 90%; /* Ensure images take up available space */
+  }
+
+  .buttons {
+    gap: 10px; /* Reduce gap between buttons */
+  }
+
+  .btn {
+    font-size: 14px; /* Reduce button text size */
+    padding: 8px 16px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-container {
+    height: 75vh; /* Further reduce height for very small screens */
+  }
+
+  .coffee-description {
+    font-size: 14px; /* Further reduce text size */
+  }
+
+  .coffee-image img {
+    max-width: 100%; /* Make image take full width */
+  }
+
+  .btn {
+    font-size: 12px; /* Further reduce button size */
+    padding: 6px 12px; /* Adjust button padding */
+  }
+}

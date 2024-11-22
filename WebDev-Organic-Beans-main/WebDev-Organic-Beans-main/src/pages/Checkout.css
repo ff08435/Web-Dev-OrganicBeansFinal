@@ -1,0 +1,130 @@
+.checkout-container {
+  max-width: 700px; /* Adjusted size */
+  margin: 120px auto; /* Increased top margin to avoid overlap */
+  padding: 20px;
+  background-color: #fdf6e3; /* Consistent theme */
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+.cart-items {
+  background-color: #fdf2e9; /* Updated to a lighter coffee cream color */
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  max-height: 200px; /* Set a height limit */
+  overflow-y: auto; /* Add scrolling if content overflows */
+}
+
+/* Other unchanged styles remain the same */
+
+
+.checkout-container h2 {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+  margin-top:10px;
+}
+
+.checkout-container p {
+  text-align: center;
+  color: #4a4a4a;
+
+}
+
+.form-section, .cart-section {
+  background-color: #f7e7bf;
+  width: 48%; /* Split the layout equally */
+
+
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #9c4f11;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6b4f2b; /* Matches website color scheme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #6b4f2b;
+}
+
+.cart-section h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #4a4a4a;
+}
+
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #fbb505;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.total {
+  margin-top: 15px;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #4a4a4a;
+  font-weight: bold;
+  text-align: center;
+}
+
+.clear-cart-button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #6b4f2b; /* Updated for better contrast */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.clear-cart-button:hover {
+  background-color: #784806;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column; /* Stack sections vertically */
+    margin: 50px auto;
+  }
+
+  .form-section, .cart-section {
+    width: 100%;
+  }
+}

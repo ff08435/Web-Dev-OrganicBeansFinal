@@ -1,0 +1,77 @@
+/* src/pages/Login.css */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #ede1c3; /* Optional: background color for the login page */
+}
+
+.login-box {
+  width: 300px;
+  padding: 30px;
+  background-color: rgb(255, 243, 203);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #4a4a4a;
+  font-family: 'Giaza Stencil', serif;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form label {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+
+.login-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for the Login button */
+.login-form button[type="submit"] {
+  padding: 10px;
+  font-size: 1.1rem;
+  background-color: #8f703a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button[type="submit"]:hover {
+  background-color: #d8e1c0;
+}
+
+/* Styling for the Sign Up button */
+.signup-button {
+  padding: 10px;
+  font-size: 1.1rem;
+  background-color: #521414f8; /* Different color for Sign Up */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Add some space between buttons */
+}
+
+.signup-button:hover {
+  background-color: #357ABD; /* Hover effect for Sign Up button */
+}

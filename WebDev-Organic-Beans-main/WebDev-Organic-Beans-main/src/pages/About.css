@@ -1,0 +1,32 @@
+
+
+.about-page {
+  /* margin-top: 100px; */
+  padding: 150px;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: 'Giaza Stencil', serif; 
+  text-align: center;
+}
+
+.about-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Giaza Stencil', serif;
+}
+
+.about-page p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #4a4a4a;
+  font-family: 'Arial', serif;
+}
+.coffee-about {
+  width: 400px;  
+  height: auto;
+  margin: 0 30px;
+  transform: translate(100%, -100x); 
+
+}

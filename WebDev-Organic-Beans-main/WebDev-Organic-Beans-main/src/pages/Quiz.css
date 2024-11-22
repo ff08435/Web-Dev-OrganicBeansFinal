@@ -1,0 +1,63 @@
+/* src/pages/Quiz.css */
+
+.quiz-page {
+  padding-top: 200px; /* Increase the top padding to shift content down */
+  padding: 160px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quiz-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.quiz-form select,
+.quiz-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.quiz-form button {
+  background-color: #8f703a;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-form button:hover {
+  background-color: #d8e1c0;
+}
+
+.recommendation {
+  margin-top: 20px;
+}
+
+.recommendation h3 {
+  font-size: 1.5rem;
+  color: #4a4a4a;
+}
+.recommendation-link {
+  color: #8f703a; /* Coffee-themed color */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.recommendation-link:hover {
+  color: #A0522D; /* Lighter hover color */
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .quiz-page {
+    padding-top: 150px; /* Slightly less padding for smaller screens */
+  }
+}
