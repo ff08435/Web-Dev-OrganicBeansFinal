@@ -61,10 +61,8 @@ body, html {
   max-height: 80%;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-
 }
 
-/* Coffee description container */
 /* Coffee description container */
 .coffee-description {
   flex: 1; /* Take up the other half of the screen */
@@ -72,7 +70,7 @@ body, html {
   text-align: left;
   font-family: 'Arial', serif; /* Ensure proper font for description */
   padding: 0 20px;
-  margin-top: 0px; /* Add space above the description */
+  margin-top: 0px;
 }
 
 /* Button container */
@@ -146,14 +144,21 @@ body, html {
 }
 
 /* Add responsive design for smaller screens */
+
+/* Tablet Devices */
 @media (max-width: 768px) {
   .scroll-container {
     height: 80vh; /* Adjust height for smaller screens */
+    overflow-y: auto; /* Allow scrolling if needed */
   }
 
   .coffee-description {
     font-size: 16px; /* Reduce text size */
-    padding: 0 50px; /* Reduce padding */
+    padding: 0 10px; /* Reduce padding for better spacing */
+  }
+
+  .coffee-image {
+    margin-top: 20px; /* Reduce top margin for smaller screens */
   }
 
   .coffee-image img {
@@ -168,15 +173,27 @@ body, html {
     font-size: 14px; /* Reduce button text size */
     padding: 8px 16px; /* Adjust button padding */
   }
+
+  .dropdown-item {
+    font-size: 13px; /* Reduce font size in dropdown */
+  }
 }
 
+/* Very Small Mobile Devices */
 @media (max-width: 480px) {
   .scroll-container {
     height: 75vh; /* Further reduce height for very small screens */
+    flex-direction: column; /* Stack items vertically if needed */
   }
 
   .coffee-description {
     font-size: 14px; /* Further reduce text size */
+    padding: 0 5px; /* Less padding for very small screens */
+    text-align: center; /* Center text for better readability */
+  }
+
+  .coffee-image {
+    margin-top: 15px; /* Adjust spacing */
   }
 
   .coffee-image img {
@@ -186,5 +203,18 @@ body, html {
   .btn {
     font-size: 12px; /* Further reduce button size */
     padding: 6px 12px; /* Adjust button padding */
+    width: 100%; /* Make buttons full width on small screens */
+    margin: 5px 0; /* Add margin between full-width buttons */
+  }
+
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    gap: 5px; /* Minimize gap between buttons */
+  }
+
+  .dropdown-item {
+    font-size: 12px; /* Reduce font size further */
+    padding: 8px; /* Adjust padding */
   }
 }

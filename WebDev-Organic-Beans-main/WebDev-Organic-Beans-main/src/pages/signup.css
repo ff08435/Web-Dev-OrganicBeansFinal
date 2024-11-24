@@ -1,69 +1,135 @@
-
 .signup-page {
-    padding: 150px;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Giaza Stencil', serif; 
+  padding: 100px 20px; /* Adjusted padding to make it more mobile-friendly */
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Giaza Stencil', serif; 
+  box-sizing: border-box; /* Ensure padding doesn't increase the total width */
+}
+
+.signup-page h1 {
+  font-size: 2.5rem; /* Keep the size large for desktop */
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Giaza Stencil', serif;
+}
+
+.signup-page p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  font-family: 'Arial', serif;
+  text-align: center;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signup-form label {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+}
+
+.signup-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-button {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #8f703a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Giaza Stencil', serif;
+}
+
+.signup-button:hover {
+  background-color: #d8e1c0;
+}
+
+.signup-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.signup-icon {
+  width: 300px;
+  height: auto;
+}
+
+/* Responsive Design */
+
+/* Tablet Devices */
+@media (max-width: 768px) {
+  .signup-page {
+    padding: 60px 15px; /* Reduce padding for better fit */
   }
-  
+
   .signup-page h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Giaza Stencil', serif;
+    font-size: 2rem; /* Reduce the heading size */
   }
-  
+
   .signup-page p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-    font-family: 'Arial', serif;
-    text-align: center;
+    font-size: 1.1rem; /* Reduce paragraph font size */
   }
-  
-  .signup-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+
   .signup-form label {
-    font-size: 1.1rem;
-    color: #4a4a4a;
+    font-size: 1rem; /* Reduce label font size */
   }
-  
+
   .signup-form input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 8px; /* Reduce input padding */
+    font-size: 0.95rem; /* Adjust input font size */
   }
-  
+
   .signup-button {
-    padding: 10px;
-    font-size: 1.2rem;
-    background-color: #8f703a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Giaza Stencil', serif;
+    font-size: 1.1rem; /* Reduce button font size */
+    padding: 8px; /* Adjust padding for buttons */
   }
-  
-  .signup-button:hover {
-    background-color: #d8e1c0;
-    /*background-color: #45a049;*/
-  }
-  
-  .signup-icon-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  
+
   .signup-icon {
-    width: 300px;
-    height: auto;
+    width: 250px; /* Reduce icon width for smaller screens */
   }
-  
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .signup-page {
+    padding: 40px 10px; /* Further reduce padding for smaller devices */
+  }
+
+  .signup-page h1 {
+    font-size: 1.8rem; /* Reduce heading size further for small devices */
+  }
+
+  .signup-page p {
+    font-size: 1rem; /* Further reduce paragraph font size */
+  }
+
+  .signup-form label {
+    font-size: 0.9rem; /* Reduce label font size */
+  }
+
+  .signup-form input {
+    padding: 8px; /* Maintain small padding */
+    font-size: 0.9rem; /* Reduce input font size */
+  }
+
+  .signup-button {
+    font-size: 1rem; /* Reduce button font size */
+    padding: 8px; /* Keep small padding for buttons */
+  }
+
+  .signup-icon {
+    width: 200px; /* Reduce icon width further for mobile */
+  }
+}

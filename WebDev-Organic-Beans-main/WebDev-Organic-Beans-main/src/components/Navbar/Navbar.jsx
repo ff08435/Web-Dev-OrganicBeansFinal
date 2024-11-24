@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import beanIcon from '../../assets/bean.png';
 import './Navbar.css';
 
 const Navbar = ({ coffeeBeans }) => {
   const [searchInput, setSearchInput] = useState('');
   const [filteredOptions, setFilteredOptions] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger menu
+  const [showSearch, setShowSearch] = useState(false); // State for showing search bar
   const navigate = useNavigate();
 
   // Handle search input changes
@@ -26,56 +27,75 @@ const Navbar = ({ coffeeBeans }) => {
 
   // Handle dropdown option selection
   const handleOptionSelect = (option) => {
-    setSearchInput(option); // Update the search input with the selected option
-    setFilteredOptions([]); // Clear the dropdown
-    navigate(`/beans?search=${encodeURIComponent(option)}`); // Navigate to the query
+    setSearchInput(option);
+    setFilteredOptions([]);
+    navigate(`/beans?search=${encodeURIComponent(option)}`);
+  };
+
+  // Handle hamburger menu toggle
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  // Handle search bar visibility toggle
+  const toggleSearch = () => {
+    setShowSearch((prev) => !prev);
   };
 
   return (
     <div className="navbar">
+      {/* Navbar Left Section - Brand Name and Hamburger Button */}
       <div className="navbar-left">
-        <ul className="navbar-links">
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/quiz">Quiz</Link></li>
-          <li><Link to="/beans">Beans</Link></li>
-        </ul>
+        <div className="hamburger-menu">
+          <button className="hamburger-btn" onClick={toggleMenu}>
+            &#9776;
+          </button>
+        </div>
+        <h1 className="brand-name">Organic Beans</h1>
       </div>
 
-      <div className="navbar-center">
-        <img src={beanIcon} alt="Bean Icon" className="bean-icon" />
-      </div>
-
+      {/* Navbar Right Section */}
       <div className="navbar-right">
-        <ul className="navbar-links">
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/signup">Signup </Link></li> {/* Added Signup link */}
+        <ul className={`navbar-links ${isMenuOpen ? 'show' : ''}`}>
+          <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
+          <li><Link to="/quiz" onClick={() => setIsMenuOpen(false)}>Quiz</Link></li>
+          <li><Link to="/beans" onClick={() => setIsMenuOpen(false)}>Beans</Link></li>
+          <li><Link to="/home" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+          <li><Link to="/signup" onClick={() => setIsMenuOpen(false)}>Signup</Link></li>
         </ul>
         <div className="navbar-icons">
-          {/* Search Form with Dropdown */}
-          <div className="search-form">
-            <input
-              type="text"
-              placeholder="Search for coffee beans..."
-              value={searchInput}
-              onChange={handleSearchChange}
-            />
-            {filteredOptions.length > 0 && (
-              <ul className="navbar-dropdown">
-                {filteredOptions.map((option, index) => (
-                  <li
-                    key={index}
-                    onClick={() => handleOptionSelect(option)}
-                    className="navbar-dropdown-item"
-                  >
-                    {option}
-                  </li>
-                ))}
-              </ul>
+          {/* Search Icon and Search Input */}
+          <div className={`search-container ${showSearch ? 'active' : ''}`}>
+            <i className="fas fa-search search-icon" onClick={toggleSearch}></i>
+            {showSearch && (
+              <div className="search-form">
+                <input
+                  type="text"
+                  placeholder="Search for coffee beans..."
+                  value={searchInput}
+                  onChange={handleSearchChange}
+                  autoFocus
+                />
+                {filteredOptions.length > 0 && (
+                  <ul className="navbar-dropdown">
+                    {filteredOptions.map((option, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleOptionSelect(option)}
+                        className="navbar-dropdown-item"
+                      >
+                        {option}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             )}
           </div>
+          {/* Cart Icon */}
           <Link to="/checkout">
-            <i className="fas fa-shopping-cart"></i>
+            <i className="fas fa-shopping-cart cart-icon"></i>
           </Link>
         </div>
       </div>

@@ -1,32 +1,97 @@
-
-
 .about-page {
-  /* margin-top: 100px; */
-  padding: 150px;
+  padding: 80px 20px; /* Adjust padding for better readability on all screen sizes */
   max-width: 800px;
   margin: 20px auto;
-  font-family: 'Giaza Stencil', serif; 
+  font-family: 'Giaza Stencil', serif; /* Consistent font family */
   text-align: center;
+  background-color: #cdbda3; /* Set background color to match theme */
+  color: #0f2f24; /* Update text color to match the site's color palette */
 }
 
 .about-page h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
-  font-family: 'Giaza Stencil', serif;
+  font-family: 'Giaza Stencil', serif; /* Consistent font family */
+  color: #0f2f24; /* Update text color */
 }
 
 .about-page p {
   font-size: 1.5rem;
   line-height: 1.6;
   text-align: center;
-  color: #4a4a4a;
-  font-family: 'Arial', serif;
+  color: #0f2f24; /* Update text color */
+  font-family: 'Giaza Stencil', serif; /* Consistent font family */
 }
-.coffee-about {
-  width: 400px;  
-  height: auto;
-  margin: 0 30px;
-  transform: translate(100%, -100x); 
 
+.coffee-about {
+  width: 100%;  /* Make image width full for smaller screens */
+  max-width: 400px; /* Constrain max width */
+  height: auto;
+  margin: 20px auto; /* Center the image with vertical margin */
+}
+
+/* Responsive Adjustments */
+
+/* Tablet Devices */
+@media (max-width: 1024px) {
+  .about-page {
+    padding: 60px 15px; /* Reduce padding for smaller screens */
+  }
+
+  .about-page h1 {
+    font-size: 2rem; /* Adjust heading font size for better readability */
+    color: #0f2f24; /* Consistent text color */
+  }
+
+  .about-page p {
+    font-size: 1.3rem; /* Adjust paragraph font size */
+    color: #0f2f24; /* Consistent text color */
+  }
+
+  .coffee-about {
+    width: 80%; /* Slightly reduce image size to fit better on tablets */
+    margin: 15px auto; /* Add consistent margin */
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 50px 10px; /* Further reduce padding */
+  }
+
+  .about-page h1 {
+    font-size: 1.8rem; /* Adjust heading size for smaller devices */
+  }
+
+  .about-page p {
+    font-size: 1.2rem; /* Reduce paragraph font size */
+  }
+
+  .coffee-about {
+    width: 100%; /* Ensure the image is full width on mobile */
+    max-width: 350px; /* Constrain max width for small devices */
+    margin: 10px auto; /* Reduce vertical margin for better spacing */
+  }
+}
+
+/* Very Small Mobile Devices */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 40px 10px; /* Keep padding manageable for small devices */
+  }
+
+  .about-page h1 {
+    font-size: 1.6rem; /* Smaller heading for small devices */
+  }
+
+  .about-page p {
+    font-size: 1.1rem; /* Smaller paragraph font for readability */
+  }
+
+  .coffee-about {
+    width: 90%; /* Limit width slightly to avoid edge-to-edge look */
+    margin: 15px auto; /* Consistent margin */
+  }
 }

@@ -1,10 +1,10 @@
 .about-box {
   background-color: #d7d1b6;
-  padding: 50px;              
+  padding: 40px;               /* Adjusted padding for smaller devices */
   border-radius: 10px;
   max-width: 500px;
-  height: 450px;
-  margin: 50px auto;           
+  height: auto;                /* Let height adjust based on content for responsive */
+  margin: 30px auto;           /* Reduced margin for mobile-friendliness */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;              
   flex-direction: column;      
@@ -12,29 +12,27 @@
   align-items: center;         
   opacity: 0;
   animation: slide-in 1s ease-out forwards;
-  /* padding: 150px; */
-  /* max-width: 800px; */
-  position: relative;
-  top: 50px;
+  position: relative;          /* Make sure it's relative, not absolute or fixed */
+  top: 0;                      /* Remove or set to 0 to prevent moving out of view */
 }
 
 @keyframes slide-in {
   from {
-      transform: translate(-250%, -500px);
-      opacity: 0;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   to {
-      transform: translate(-60%, -450px);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 .about-box h2 {
   font-family: 'Giaza Stencil', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;             
   margin-bottom: 10px;
+  text-align: center;          
   transform: translateY(0);
-
 }
 
 .about-box p {
@@ -42,16 +40,17 @@
   font-size: 1rem;
   line-height: 1.5;
   color: #4a4a4a;
-  margin: 20px 0;             
-  transform: translateY(0);    
-  padding: 0 30px;      
+  margin: 15px 0;             
+  padding: 0 20px;            
+  text-align: center;         
+  transform: translateY(0);
 }
 
 .read-more-button {
   font-family: 'Giaza Stencil', serif;
   background-color: #6d4c41;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 16px;          
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -60,4 +59,80 @@
 
 .read-more-button:hover {
   background-color: #5a3a33;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablet Devices */
+@media (max-width: 1024px) {
+  .about-box {
+    padding: 30px;              
+    max-width: 80%;             
+    margin: 20px auto;          
+    animation: slide-in-tablet 1s ease-out forwards; /* A different animation for tablets */
+  }
+
+  .about-box h2 {
+    font-size: 1.8rem;          
+  }
+
+  .about-box p {
+    font-size: 0.9rem;          
+    padding: 0 15px;            
+  }
+
+  .read-more-button {
+    padding: 8px 14px;          
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .about-box {
+    padding: 20px;              
+    max-width: 90%;             
+    top: 0;                     
+    position: relative;         /* Keep it relative to avoid issues with viewport */
+    animation: none;            /* Disable the animation for simplicity */
+    opacity: 1;                 /* Ensure the box is visible */
+    margin: 20px auto;          /* Adjust margin to keep spacing even on smaller devices */
+  }
+
+  .about-box h2 {
+    font-size: 1.5rem;          
+  }
+
+  .about-box p {
+    font-size: 0.85rem;         
+    padding: 0 10px;            
+  }
+
+  .read-more-button {
+    padding: 7px 12px;          
+  }
+}
+
+/* Very Small Mobile Devices */
+@media (max-width: 480px) {
+  .about-box {
+    padding: 15px;              
+    max-width: 95%;             
+    top: 0;                     
+    margin: 10px auto;          
+    position: relative;         
+    opacity: 1;                 /* Ensure visibility */
+  }
+
+  .about-box h2 {
+    font-size: 1.4rem;          
+  }
+
+  .about-box p {
+    font-size: 0.8rem;          
+  }
+
+  .read-more-button {
+    padding: 6px 10px;          
+    font-size: 0.9rem;          
+  }
 }

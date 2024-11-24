@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
-import Slideshow from './components/Slideshow/Slideshow';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import AboutBox from './components/AboutBox/AboutBox';
+import HomePage from './pages/Homepage'; // Import HomePage instead of Slideshow and AboutBox
 import About from './pages/About';
 import Signup from './pages/signup';
 import Contact from './pages/contact';
@@ -88,12 +87,7 @@ const App = () => {
             <>
               <Route
                 path="/"
-                element={
-                  <div className="content">
-                    <Slideshow />
-                    <AboutBox />
-                  </div>
-                }
+                element={<HomePage />} // Use HomePage as the root route
               />
               <Route path="/home" element={<Navigate to="/" replace />} />
               <Route path="/about" element={<About />} />
