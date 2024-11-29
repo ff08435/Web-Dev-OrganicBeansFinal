@@ -1,19 +1,54 @@
 import './contact.css';
 import contactIcon from '../pages/contactIcon.png'; 
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for contacting us! We'll get back to you soon.");
-    setName('');
-    setEmail('');
-    setMessage('');
+    console.log("Submitting form with data:", { name, email, message }); // Log form data
+  
+    try {
+      const response = await fetch('http://localhost:5000/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+  
+      if (response.ok) {
+        console.log("Message sent successfully"); // Log success
+        toast.success("Message sent successfully!", {
+          position: "top-right", // Replace toast.POSITION.TOP_RIGHT with a string
+          autoClose: 3000
+        });
+        
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        const errorData = await response.json();
+        console.error("Error response from server:", errorData); // Log error response
+        toast.error(`Error: ${errorData.error}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000
+        });
+      }
+    } catch (error) {
+      console.error("Error sending contact message:", error);
+      toast.error("An error occurred. Please try again later.", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000
+      });
+    }
   };
+  
+  
 
   return (
     <div className="contact-page">

@@ -5,10 +5,10 @@ import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
 import './Beans.css';
 
 // Import images from the pages folder
-import EthiopianBeansImage from './Ethiopian.jpeg';
-import GuatemalanDarkRoastImage from './Ethiopian.jpeg';
-import ColombianDecafImage from './Ethiopian.jpeg';
-import SumatranBeansImage from './Ethiopian.jpeg';
+import EthiopianBeansImage from './summ.jpeg';
+import GuatemalanDarkRoastImage from './summ.jpeg';
+import ColombianDecafImage from './summ.jpeg';
+import SumatranBeansImage from './summ.jpeg';
 
 const CoffeeSelection = () => {
   const scrollContainer = useRef(null); // Added scroll container reference

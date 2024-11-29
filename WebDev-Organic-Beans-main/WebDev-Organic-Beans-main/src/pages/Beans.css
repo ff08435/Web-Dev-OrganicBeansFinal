@@ -4,52 +4,63 @@ body, html {
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden; /* Prevent vertical scrollbars if not needed */
+  overflow: hidden;
+  font-family: 'Georgia', serif; /* Clean serif font for organic feel */
+  background-color: #f5f5e9; /* Soft beige background */
+  color: #2e2b2b; /* Darker brown for text */
 }
 
 /* Scroll container for the carousel */
 .scroll-container {
   display: flex;
-  width: 100vw; /* Fit full screen width */
-  height: 100vh; /* Fit full screen height */
-  overflow-x: scroll; /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Enable snapping */
-  scroll-behavior: smooth; /* Smooth scrolling */
-  overscroll-behavior-x: contain; /* Contain scrolling within bounds */
+  width: 100vw;
+  height: 100vh;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
   margin: 0;
   padding: 0;
 }
 
 /* Individual sections */
 .scroll-item {
-  scroll-snap-align: start; /* Snap at the start of each item */
-  flex: 0 0 100%; /* Each section fills the full viewport width */
-  height: 100%; /* Each section fills the full viewport height */
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column; /* Allow stacking elements vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: rgb(37, 12, 1);
+  background-color: #f5f5e9; /* Match website background */
+  color: #2e2b2b;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-item:hover {
+  transform: scale(1.02); /* Subtle zoom effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Section colors for visual distinction */
 .section-1 {
-  background-color: #bccf93;
+  background-color: #e7dbc3;
 }
 .section-2 {
-  background-color: #a1a34076;
+  background-color: #d6c9a8;
 }
 .section-3 {
-  background-color: #d2ac5e;
+  background-color: #c7b089;
 }
 .section-4 {
-  background-color: #b0734b;
+  background-color: #b79f6e;
 }
 
 /* Coffee image container */
 .coffee-image {
-  flex: 1; /* Take up half of the screen vertically */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,48 +68,52 @@ body, html {
 }
 
 .coffee-image img {
-  max-width: 80%; /* Restrict the image size */
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  max-width: 70%;
+  max-height: 70%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Elegant shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.coffee-image img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Coffee description container */
 .coffee-description {
-  flex: 1; /* Take up the other half of the screen */
-  font-size: 20px;
+  flex: 1;
+  font-size: 18px;
   text-align: left;
-  font-family: 'Arial', serif; /* Ensure proper font for description */
+  font-family: 'Georgia', serif; /* Matching font */
   padding: 0 20px;
-  margin-top: 0px;
+  color: #5b4737; /* Softer brown for text */
 }
 
 /* Button container */
 .buttons {
   margin-top: 20px;
   display: flex;
-  gap: 15px; /* Add spacing between buttons */
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-  justify-content: center; /* Center buttons on smaller screens */
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Buttons styling */
 .btn {
   padding: 10px 20px;
-  background-color: #793d12b8; /* Coffee-like button color */
+  background-color: #8d6f48; /* Muted coffee tone */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-family: 'Giaza Stencil', serif;
-  font-size: 15px;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Button hover effect */
 .btn:hover {
-  background-color: #A0522D; /* Slightly lighter color */
-  transform: scale(1.05); /* Subtle zoom effect */
+  background-color: #b2905b; /* Slightly lighter coffee tone */
+  transform: scale(1.05);
 }
 
 /* Search container */
@@ -109,8 +124,11 @@ body, html {
 
 .search-bar {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
+  border: 2px solid #c1a375;
+  border-radius: 5px;
+  background-color: #fffaf0;
 }
 
 /* Dropdown styling */
@@ -119,8 +137,8 @@ body, html {
   top: 100%;
   left: 0;
   width: 100%;
-  background: white;
-  border: 1px solid #ccc;
+  background: #f8f3e9; /* Soft background */
+  border: 1px solid #d0c4a5;
   border-radius: 4px;
   z-index: 1000;
   list-style: none;
@@ -132,15 +150,15 @@ body, html {
 .dropdown-item {
   padding: 10px;
   font-size: 14px;
-  color: #4a4a4a;
+  color: #5e4b3c;
   cursor: pointer;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #efe3cc;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dropdown-item:hover {
-  background-color: #f9f9f9;
-  color: #2e2e2e;
+  background-color: #efe3cc;
+  color: #3b2d23;
 }
 
 /* Add responsive design for smaller screens */
@@ -148,73 +166,73 @@ body, html {
 /* Tablet Devices */
 @media (max-width: 768px) {
   .scroll-container {
-    height: 80vh; /* Adjust height for smaller screens */
-    overflow-y: auto; /* Allow scrolling if needed */
+    height: 80vh;
+    overflow-y: auto;
   }
 
   .coffee-description {
-    font-size: 16px; /* Reduce text size */
-    padding: 0 10px; /* Reduce padding for better spacing */
+    font-size: 16px;
+    padding: 0 10px;
   }
 
   .coffee-image {
-    margin-top: 20px; /* Reduce top margin for smaller screens */
+    margin-top: 20px;
   }
 
   .coffee-image img {
-    max-width: 90%; /* Ensure images take up available space */
+    max-width: 85%;
   }
 
   .buttons {
-    gap: 10px; /* Reduce gap between buttons */
+    gap: 10px;
   }
 
   .btn {
-    font-size: 14px; /* Reduce button text size */
-    padding: 8px 16px; /* Adjust button padding */
+    font-size: 14px;
+    padding: 8px 16px;
   }
 
   .dropdown-item {
-    font-size: 13px; /* Reduce font size in dropdown */
+    font-size: 13px;
   }
 }
 
 /* Very Small Mobile Devices */
 @media (max-width: 480px) {
   .scroll-container {
-    height: 75vh; /* Further reduce height for very small screens */
-    flex-direction: column; /* Stack items vertically if needed */
+    height: 75vh;
+    flex-direction: column;
   }
 
   .coffee-description {
-    font-size: 14px; /* Further reduce text size */
-    padding: 0 5px; /* Less padding for very small screens */
-    text-align: center; /* Center text for better readability */
+    font-size: 14px;
+    padding: 0 5px;
+    text-align: center;
   }
 
   .coffee-image {
-    margin-top: 15px; /* Adjust spacing */
+    margin-top: 15px;
   }
 
   .coffee-image img {
-    max-width: 100%; /* Make image take full width */
+    max-width: 100%;
   }
 
   .btn {
-    font-size: 12px; /* Further reduce button size */
-    padding: 6px 12px; /* Adjust button padding */
-    width: 100%; /* Make buttons full width on small screens */
-    margin: 5px 0; /* Add margin between full-width buttons */
+    font-size: 12px;
+    padding: 6px 12px;
+    width: 100%;
+    margin: 5px 0;
   }
 
   .buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center align buttons */
-    gap: 5px; /* Minimize gap between buttons */
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
   }
 
   .dropdown-item {
-    font-size: 12px; /* Reduce font size further */
-    padding: 8px; /* Adjust padding */
+    font-size: 12px;
+    padding: 8px;
   }
 }

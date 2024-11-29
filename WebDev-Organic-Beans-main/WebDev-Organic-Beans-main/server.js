@@ -4,6 +4,8 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
 
+
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -238,3 +240,35 @@ app.post('/clear-cart', async (req, res) => {
 });
 
 
+
+// Define Contact schema
+// Define Contact schema
+const contactSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  message: String,
+  submittedAt: { type: Date, default: Date.now }
+});
+
+const Contact = mongoose.model('Contact', contactSchema);
+
+
+app.post('/contact', async (req, res) => {
+  console.log("Request body:", req.body); // Log incoming request body
+
+  const { name, email, message } = req.body;
+
+  try {
+    const newMessage = new Contact({ name, email, message });
+    const savedMessage = await newMessage.save(); // Save to the database
+    console.log("Message saved to database:", savedMessage); // Log saved message
+    res.status(201).json({ message: "Message saved successfully." });
+  } catch (error) {
+    console.error("Error saving message:", error);
+    res.status(500).json({ error: "Failed to save your message." });
+  }
+});
+
+
+
+  
